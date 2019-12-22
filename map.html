@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .lable{position: absolute; left: 0; top: 0; padding: 5px 10px; box-shadow: 0,0,0,rgba(0,0,0,.2); border-radius: 6px;}
+        .lable::after{display: block;position: absolute;content: '';width: 0; height: 0; border: solid 6px rgba(11,16,74,.7); left: 50%; bottom:-12px;transform: translate(-50%); border-left-color:transparent; border-right-color: transparent; border-bottom-color:transparent}
+        .lable span{ font-size: 24px;font-weight: bold}
+        .chart-box #chart{position: absolute; bottom: -35px}
+        .db{left: 529px; top: 170px; background-color: rgba(11,16,74,.7);color:rgb(255,242,0)}
+    </style>
+</head>
+<body>
+      
+      
+      <div class="chart-box" style="position: relative; width: 728px; height: 577px; border: solid 1px #ee0e00">
+        <div id="chart" style="width: 728px; height: 577px;"></div>
+          <div class="lable db">东北：<span>5</span> 家</div>  
+          <div class="lable hb">华北：<span>70</span> 家</div>  
+          <div class="lable hb">湖北：<span>3</span> 家</div>  
+          <div class="lable sz">苏浙：<span>11</span> 家</div>  
+          <div class="lable wg">皖赣：<span>7</span> 家</div>  
+          <div class="lable hn">华南：<span>18</span> 家</div>  
+          <div class="lable xn">西南：<span>20</span> 家</div>  
+      </div>
+         
+      
+      
+      
+      
+      
+      
+      
+      
+    <script src="./jquery-1.8.3.min.js"></script>
+    <script src="echarts.common.min.js"></script>
+    <script src="./map.js"></script>
+       <script>
+    var myChart = echarts.init(document.getElementById('chart'));
+
+    var option = {
+    title : {
+        text: '',
+        left: 'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        show:false
+    },
+    visualMap: {
+        show:false,
+        min: 0,
+        max: 10,
+        splitNumber: 10,
+        color: ['rgba(255,242,0,.6)', 'rgba(50,255,133,.6)','rgba(0,255,255,.6)','rgba(255,148,96,.6)',  'rgba(255,77,100,.6)' ,'rgba(181,16,254,.6)','rgba(87,203,255,.6)','#eaeaea','#eaeaea','#eaeaea',],
+        showLabel:true,
+    },
+    series : [
+        {
+            name: '会员数量',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+//            itemStyle:{
+//                normal:{label:{show:true}}
+//            },
+            data:[]
+        }
+    ]
+}; 
+        //获取数据
+        function getData(){
+            var data = [
+                {name: '北京',value: 0},
+                {name: '天津',value: 0},
+                {name: '上海',value: 0},
+                {name: '重庆',value: 0},
+                {name: '河北',value: 9},
+                {name: '河南',value: 9},
+                {name: '云南',value: 5},
+                {name: '辽宁',value: 10},
+                {name: '黑龙江',value: 10},
+                {name: '湖南',value: 5},
+                {name: '安徽',value: 7},
+                {name: '山东',value: 9},
+                {name: '新疆',value: 0},
+                {name: '江苏',value: 8},
+                {name: '浙江',value: 8},
+                {name: '江西',value: 7},
+                {name: '湖北',value: 6},
+                {name: '广西',value: 5},
+                {name: '甘肃',value: 0},
+                {name: '山西',value: 0},
+                {name: '内蒙古',value: 9},
+                {name: '陕西',value: 0},
+                {name: '吉林',value: 10},
+                {name: '福建',value: 0},
+                {name: '贵州',value: 4},
+                {name: '广东',value: 5},
+                {name: '青海',value: 0},
+                {name: '西藏',value: 0},
+                {name: '四川',value: 4},
+                {name: '宁夏',value: 0},
+                {name: '海南',value: 0},
+                {name: '台湾',value: 0},
+                {name: '香港',value: 0},
+                {name: '澳门',value: 0}
+            ];
+//            赋值
+            option.series[0].data = data;
+            //求出最大数量最小数量并赋值
+            var numArr=  [];
+            data.map(function(i,index){
+                if(i.value){
+                              numArr.push(i.value)      
+                }else{
+                     numArr.push(0)
+                }
+
+            });    
+            //赋值给左边柱状图 求出最大值10个
+            //初始化图表
+            myChart.setOption(option);   
+        }
+           
+           
+        var app = {}        
+        getData();
+           
+    </script>
+</body>
+</html>

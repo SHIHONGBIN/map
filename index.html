@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="top">
+        <h4>卓锐数据大屏系统</h4>
+        <div class="cur-time" id='curTime'><span class="time" id="time"></span> <span>|</span> <span class="date" id="date"></span></div>
+    </div>
+    <div class="contente">
+        <div class="c-top">
+            <div class="c-l">
+               <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-title">
+                    今天诉求统计
+                </div>
+                <div class="c-con">
+                    <div class="c-c-l">
+                        <div class="t-text">
+                            今天诉求总数 <span>100</span>
+                        </div>
+                        <div class="b-text">
+                            今天未完成数 <span>50</span>
+                        </div>
+                    </div>
+                    <div class="c-c-r">
+                         <canvas id="canvas1"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="c-c">
+                 <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-title">
+                    <span  id="Ctitle"></span>年诉求统计
+                </div>
+                <div class="c-con">
+                    <div class="c-c-l">
+                        <div class="totle-sq">
+                            <p>当年诉求总数</p>
+                            <p>21000</p>
+                        </div>
+                         <div class="t-text" style="display:none">
+                            当年诉求总数 <span>100</span>
+                        </div>
+                        <div class="b-text" style="display:none">
+                            当年未完成数 <span>20</span>
+                        </div>
+                    </div>
+                    <div class="c-c-r">
+                         <canvas id="canvas3"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="c-r">
+                <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-title">
+                   <span id="Cmonth"></span>月诉求统计
+                </div>
+                <div class="c-con">
+                    <div class="c-c-l">
+                        <div class="t-text">
+                            当月诉求总数 <span>1800</span>
+                        </div>
+                        <div class="b-text">
+                            当月未完成数 <span>0</span>
+                        </div>
+                    </div>
+                    <div class="c-c-r">
+                         <canvas id="canvas2"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <div class="c-top c-center">
+            <div class="c-l">
+               <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-title">
+                    进行中工单情况
+                </div>
+                <div class="c-con">  
+                <ul>
+                       <li><p>工单编号</p><p>请求时间</p><p>公司</p><p>状态</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>已解决</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>已解决</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>已解决</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>已解决</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>已解决</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                       <li><p>IN2019120133215</p><p>2019/12/10 10:46</p><p>中山港华燃气公司大萨达撒大</p><p>新建</p></li>
+                   </ul>
+                </div>
+            </div>
+            <div class="c-c">
+                 <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-c-title">
+                    <div class="totle-num">
+                        <p>系统管理用户数</p>
+                        <div><span  data-text="200000000">200000000</span><i>户</i></div>
+                    </div>
+                    <div class="fire-num">
+                       <p>已点火用户数</p>
+                        <div ><span data-text="1999999">1999999</span><i>户</i></div></div>
+                    <div class="service-num">
+                       <p>客户服务数</p>
+                        <div ><span data-text="2000">2000</span><i>家</i></div></div>
+                </div>
+                <div class="c-c-map">
+                       <div class="map-data">
+                           <p>民用户<span>150000</span></p>
+                           <p>商用户<span>50000</span></p>
+                           <p>工业户<span>20000</span></p>
+                           <p>其<i></i>他<span>30000</span></p>
+                       </div>
+                        <div class="chart-box" style="position: relative; width: 700px; height: 550px;">
+        <div id="chart" style="width: 700px; height: 550px;"></div>
+          <div class="lable db">东北：<span>5</span> 家</div>  
+          <div class="lable hb">华北：<span>70</span> 家</div>  
+          <div class="lable hbp">湖北：<span>3</span> 家</div>  
+          <div class="lable sz">苏浙：<span>11</span> 家</div>  
+          <div class="lable wg">皖赣：<span>7</span> 家</div>  
+          <div class="lable hn">华南：<span>18</span> 家</div>  
+          <div class="lable xn">西南：<span>20</span> 家</div>  
+      </div>
+                </div>
+            </div>
+            <div class="c-r">
+             <div class="bgline l1"></div>
+               <div class="bgline l2"></div>
+               <div class="bgline l3"></div>
+               <div class="bgline l4"></div>
+                <div class="c-title">
+                    近7天诉求情况及类型分布
+                </div>
+                <div class="c-con">
+                    <div class="c-c-t-map">
+                        <div id="map7First" style="width: 500px; height: 280px;"></div>
+                    </div>
+                    <div class="c-c-b-map">
+                    <div class="where-type"></div>
+                    <div id="map7Second" style="width: 500px; height: 300px;"></div>
+                    </div>
+                </div>
+        </div>
+        </div>
+
+    </div>
+    
+    
+
+<script src="./jquery-1.8.3.min.js"></script>  
+
+    <script src="sprit.js"></script>
+    <script src="drawCanvas.js"></script>
+    <script src="animateCanvas.js"></script>  
+<!--             <script src="echarts.common.min.js"></script>-->
+             <script src="echarts.min.js"></script>
+    <script src="./map.js"></script>
+<script>
+    (function(){
+     //时间
+        function updateTime(){
+            $('#time').text(new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds())
+            setTimeout(function(){
+                $('#time').text(new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds())
+                updateTime()
+            },1000)
+        }
+        updateTime()
+    //日期
+        var dayarr = [...'天一二三四五六']
+        function getDate(){
+            $('#date').text(new Date().getFullYear() + '-' + (new Date().getMonth()+1)+'-' + new Date().getDate() + ' 星期'+ dayarr[new Date().getDay()])
+        }
+        getDate()
+    //年份
+        $('#Ctitle').text(new Date().getFullYear())
+        $('#Cmonth').text(new Date().getMonth()+1)
+    //map china
+        chinaMap()
+        function chinaMap(){
+             var myChart = echarts.init(document.getElementById('chart'));
+
+    var option = {
+    title : {
+        text: '',
+        left: 'center'
+    },
+    tooltip : {
+        trigger: 'item',
+        show:false
+    },
+    visualMap: {
+        show:false,
+        min: 0,
+        max: 10,
+        splitNumber: 10,
+        color: ['rgba(255,242,0,.8)', 'rgba(50,255,133,.8)','rgba(0,255,255,.8)','rgba(255,148,96,.8)',  'rgba(255,77,100,.8)' ,'rgba(181,16,254,.8)','rgba(87,203,255,.8)','rgba(52,171,255,.29)','rgba(52,171,255,.29)','rgba(52,171,255,.29)'],
+        showLabel:true
+    },
+    series : [
+        {
+            name: '会员数量',
+            type: 'map',
+            mapType: 'china',
+            roam: false,
+            itemStyle:{
+                  borderColor :'#00a0fd',
+        borderWidth:'1'
+            },
+            data:[],
+            
+        }
+    ]
+}; 
+        //获取数据
+        function getData(){
+            var data = [
+                {name: '北京',value: 0},
+                {name: '天津',value: 0},
+                {name: '上海',value: 0},
+                {name: '重庆',value: 0},
+                {name: '河北',value: 9},
+                {name: '河南',value: 9},
+                {name: '云南',value: 5},
+                {name: '辽宁',value: 10},
+                {name: '黑龙江',value: 10},
+                {name: '湖南',value: 5},
+                {name: '安徽',value: 7},
+                {name: '山东',value: 9},
+                {name: '新疆',value: 0},
+                {name: '江苏',value: 8},
+                {name: '浙江',value: 8},
+                {name: '江西',value: 7},
+                {name: '湖北',value: 6},
+                {name: '广西',value: 5},
+                {name: '甘肃',value: 0},
+                {name: '山西',value: 0},
+                {name: '内蒙古',value: 9},
+                {name: '陕西',value: 0},
+                {name: '吉林',value: 10},
+                {name: '福建',value: 0},
+                {name: '贵州',value: 4},
+                {name: '广东',value: 5},
+                {name: '青海',value: 0},
+                {name: '西藏',value: 0},
+                {name: '四川',value: 4},
+                {name: '宁夏',value: 0},
+                {name: '海南',value: 0},
+                {name: '台湾',value: 0},
+                {name: '香港',value: 0},
+                {name: '澳门',value: 0},
+                {name: '南海诸岛',value: 0}
+//加到数组里面 可以使地图消失
+                //itemStyle: {
+//                normal: {
+//                  opacity: 0,
+//                  label: {
+//                    show: false
+//                  }
+//                }
+//                }
+
+            ];
+//            赋值
+            option.series[0].data = data;
+            //求出最大数量最小数量并赋值
+            var numArr=  [];
+            data.map(function(i,index){
+                if(i.value){
+                              numArr.push(i.value)      
+                }else{
+                     numArr.push(0)
+                }
+
+            });    
+            //赋值给左边柱状图 求出最大值10个
+            //初始化图表
+            myChart.setOption(option);   
+        }
+           
+           
+        var app = {}        
+        getData();
+        }
+    //7天诉求图标o
+        function dat7map1(){
+            var map71 = echarts.init(document.getElementById('map7First'))
+            
+var option = {
+    tooltip: {
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['诉求数', '未完成'],
+        right:0,
+        top:30,
+        textStyle:{
+            color:'#ffffff'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '3%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'category',
+        axisLine :{
+            show :'false',
+            lineStyle:{
+                color:'#9fceff'
+            }
+        },
+        data: ['巴西','印尼','美国','印度','中国'],
+        nameTextStyle:{
+            color:'#ffffff'
+        },
+        boundaryGap:['0', '20%']
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01],
+         nameTextStyle:{
+            color:'#ffffff'
+        },
+        axisLine:{
+			 show :'false',
+            lineStyle:{
+                color:'#9fceff'
+            }
+			            },
+			            axisTick:{
+			                show:false
+			            },
+			            splitLine:{
+			                show:false
+			            }
+    },
+    series: [
+        {
+            name: '诉求数',
+            type: 'bar',
+             barWidth: 16,
+            data: [18203, 23489, 29034, 104970, 131744],
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    color:'#fff'
+                },
+            },
+                    itemStyle: {
+            normal: {
+               barBorderRadius: [5,5,0,0],
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#05c8ff'},
+                        {offset: 1, color: '#4e79f1'}
+                    ]
+                )
+            }
+        },
+        },
+        {
+            name: '未完成',
+            type: 'bar',
+            barWidth: 16,
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top',
+                    color:'#fff'
+                }
+            },
+                   itemStyle: {
+            normal: {
+                barBorderRadius: [5,5,0,0],
+                color: new echarts.graphic.LinearGradient(
+                    0, 0, 0, 1,
+                    [
+                        {offset: 0, color: '#ff9360'},
+                        {offset: 1, color: '#ff4e64'}
+                    ]
+                )
+            }
+        },
+            data: [19325, 23438, 31000, 121594, 134141]
+        }
+    ]
+};
+            
+             var getData = [
+            {date:'11月1日',sqs:'99', wwc:'50'},
+            {date:'11月2日',sqs:'88', wwc:'77'},
+            {date:'11月3日',sqs:'66', wwc:'29'},
+            {date:'11月4日',sqs:'77', wwc:'55'},
+            {date:'11月5日',sqs:'55', wwc:'33'},
+            {date:'11月6',sqs:'80', wwc:'55'},
+            {date:'11月7日',sqs:'60', wwc:'10'}
+        ]
+        
+        getData.map(function(item, index){
+            option.xAxis.data[index] = item.date
+            option.series[0].data[index] = item.sqs
+            option.series[0].label.normal.color = '#7ee3ff'
+            option.series[1].data[index] = item.wwc
+            option.series[1].label.normal.color= '#ff9460'
+        })
+              map71.setOption(option);   
+        }
+        dat7map1()
+        
+        function data7map2(){
+            var map72 = echarts.init(document.getElementById('map7Second'))
+            var datas = [{name:'资讯类',data:'10'},{name:'资讯',data:'80'},{name:'讯类',data:'100'},{name:'类',data:'200'},{name:'1讯类',data:'90'}]
+            
+var option = {
+    color:['#fff200','#ff9460', '#00ffff', '#b775ff', '#32ff85'],
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        left:'380',
+        top:'70',
+        textStyle:{
+            color:'#9fceff'
+        },
+        data:['资讯类','资讯','讯类','类','1讯类'],
+        formatter:  function(name){
+    var total = 0;
+    var target;
+    for (var i = 0, l = datas.length; i < l; i++) {
+    total += datas[i].data*1;
+    if (datas[i].name == name) {
+        target = datas[i].data;
+        }
+    }
+    return name + ' ' + ((target/total)*100).toFixed(2) + '%';
+}
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['45%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: false,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:100, name:'资讯类'},
+                {value:100, name:'资讯'},
+                {value:100, name:'讯类'},
+                {value:100, name:'类'},
+                {value:100, name:'1讯类'}
+            ]
+        }
+    ]
+};
+            datas.map(function(item, index){
+                option.series[0].data[index].value = item.data
+                option.series[0].data[index].name = item.name
+            })
+            map72.setOption(option);   
+        }
+        data7map2()
+           
+     })()
+</script>
+</body>
+</html>
